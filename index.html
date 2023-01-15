@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ressursarkiv</title>
+  <link href="ressurser.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>RESSURSARKIV</h1>
+  </header>
+  <main>
+    <nav>
+      <a id="htmlBtn"class="active">HTML</a>
+      <a id="cssBtn">CSS</a>
+      <a id="javascriptBtn">Javascript</a>
+    </nav>
+    <section>
+      <h2 id="kategori"></h2>
+      <p id="tekst"></p>
+      <ul id="ressurser"></ul>
+    </section>
+  </main>
+  <script src="ressurser.js"></script>
+  <script> 
+    const htmlBtn = document.getElementById("htmlBtn")
+    const cssBtn = document.getElementById("cssBtn")
+    const javascriptBtn = document.getElementById("javascriptBtn")
+
+    const kategori = document.getElementById("kategori")
+    const tekst = document.getElementById("tekst")
+    const ressurser = document.getElementById("ressurser")
+
+    function htmlContent(){
+      kategori.innerHTML = resources[0].category;
+      tekst.innerHTML = resources[0].text;
+      resources[0].sources.map((source) => {
+        ressurser.innerHTML += `<li><a href=${source.url}>${source.title}</a></li>`
+      })
+    }
+    
+    htmlContent()
+
+    function cssContent(){
+      kategori.innerHTML = resources[1].category;
+      tekst.innerHTML = resources[1].text;
+      resources[1].sources.map((source) => {
+        ressurser.innerHTML += `<li><a href=${source.url}>${source.title}</a></li>`
+      })
+    }
+
+    function javascriptContent(){
+      kategori.innerHTML = resources[2].category;
+      tekst.innerHTML = resources[2].text;
+      resources[2].sources.map((source) => {
+        ressurser.innerHTML += `<li><a href=${source.url}>${source.title}</a></li>`
+      })
+    }
+
+    htmlBtn.addEventListener("click", changeToHtml);
+    cssBtn.addEventListener("click", changeToCss);
+    javascriptBtn.addEventListener("click", changeToJavascript);
+
+    
+    function changeToHtml(){
+    if (!htmlBtn.classList.contains("active")){
+      htmlBtn.classList.add("active");
+      ressurser.innerHTML = ""
+      htmlContent()
+      cssBtn.classList.remove("active");
+      javascriptBtn.classList.remove("active");
+    }
+    }
+
+    function changeToCss(){
+    if (!cssBtn.classList.contains("active")){
+      cssBtn.classList.add("active");
+      ressurser.innerHTML = ""
+      cssContent()
+      htmlBtn.classList.remove("active");
+      javascriptBtn.classList.remove("active");
+    }
+    }
+
+    function changeToJavascript(){
+    if (!javascriptBtn.classList.contains("active")){
+      javascriptBtn.classList.add("active");
+      ressurser.innerHTML = ""
+      javascriptContent()
+      htmlBtn.classList.remove("active");
+      cssBtn.classList.remove("active");
+    }
+    }
+    </script>
+</body>
+</html>
