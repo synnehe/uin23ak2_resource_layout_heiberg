@@ -16,6 +16,8 @@
       <a id="htmlBtn"class="active">HTML</a>
       <a id="cssBtn">CSS</a>
       <a id="javascriptBtn">Javascript</a>
+      <a id="reactBtn">React</a>
+      <a id="sanityBtn">Sanity and headless CMS</a>
     </nav>
     <section>
       <h2 id="kategori"></h2>
@@ -28,6 +30,8 @@
     const htmlBtn = document.getElementById("htmlBtn")
     const cssBtn = document.getElementById("cssBtn")
     const javascriptBtn = document.getElementById("javascriptBtn")
+    const reactBtn = document.getElementById("reactBtn")
+    const sanityBtn = document.getElementById("sanityBtn")
 
     const kategori = document.getElementById("kategori")
     const tekst = document.getElementById("tekst")
@@ -59,40 +63,99 @@
       })
     }
 
+    function reactContent(){
+      kategori.innerHTML = resources[3].category;
+      tekst.innerHTML = resources[3].text;
+      resources[3].sources.map((source) => {
+        ressurser.innerHTML += `<li><a href=${source.url}>${source.title}</a></li>`
+      })
+    }
+
+    function sanityContent(){
+      kategori.innerHTML = resources[4].category;
+      tekst.innerHTML = resources[4].text;
+      resources[4].sources.map((source) => {
+        ressurser.innerHTML += `<li><a href=${source.url}>${source.title}</a></li>`
+      })
+    }
+
     htmlBtn.addEventListener("click", changeToHtml);
     cssBtn.addEventListener("click", changeToCss);
     javascriptBtn.addEventListener("click", changeToJavascript);
+    reactBtn.addEventListener("click", changeToReact);
+    sanityBtn.addEventListener("click", changeToSanity);
+
+    const allElements = document.querySelectorAll("*");
+
+ /*
+    htmlBtn.addEventListener("click", changeHTML(htmlBtn, htmlContent));
+    cssBtn.addEventListener("click", changeHTML(cssBtn, cssContent));
+    javascriptBtn.addEventListener("click", changeHTML(javascriptBtn, javascriptContent));
+    reactBtn.addEventListener("click", changeHTML(reactBtn, reactContent));
+    sanityBtn.addEventListener("click", changeHTML(sanityBtn, sanityContent));
+
+    function changeHTML(activate, content){
+    const allElements = document.querySelectorAll("*");
+
+    
+    if (!activate.classList.contains("active")){
+      allElements.forEach(element => {element.classList.remove("active")});
+      activate.classList.add("active");
+      ressurser.innerHTML = "";
+      content()
+    }
+    }*/
 
     
     function changeToHtml(){
     if (!htmlBtn.classList.contains("active")){
+      allElements.forEach(element => {element.classList.remove("active")});
       htmlBtn.classList.add("active");
       ressurser.innerHTML = ""
       htmlContent()
-      cssBtn.classList.remove("active");
-      javascriptBtn.classList.remove("active");
     }
     }
 
+    changeToHtml()
+
     function changeToCss(){
     if (!cssBtn.classList.contains("active")){
+      allElements.forEach(element => {element.classList.remove("active")});
       cssBtn.classList.add("active");
       ressurser.innerHTML = ""
       cssContent()
-      htmlBtn.classList.remove("active");
-      javascriptBtn.classList.remove("active");
     }
     }
 
     function changeToJavascript(){
     if (!javascriptBtn.classList.contains("active")){
+      allElements.forEach(element => {element.classList.remove("active")});
       javascriptBtn.classList.add("active");
       ressurser.innerHTML = ""
       javascriptContent()
-      htmlBtn.classList.remove("active");
-      cssBtn.classList.remove("active");
     }
     }
+
+    function changeToReact(){
+    if (!reactBtn.classList.contains("active")){
+      allElements.forEach(element => {element.classList.remove("active")});
+      reactBtn.classList.add("active");
+      ressurser.innerHTML = ""
+      reactContent()
+    }
+    }
+
+    function changeToSanity(){
+    if (!sanityBtn.classList.contains("active")){
+      allElements.forEach(element => {element.classList.remove("active")});
+      sanityBtn.classList.add("active");
+      ressurser.innerHTML = ""
+      sanityContent()
+    }
+    }
+
+
+
     </script>
 </body>
 </html>

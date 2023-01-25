@@ -2,25 +2,19 @@
   font-family: Helvetica, sans-serif, Arial;
   padding: 0;
   margin: 0;
-  color: var(--grey);
+  color: hsl(0deg, 0%, 44%);
   box-sizing: border-box;
 }
 
-:root{
-  --grey: #707070;
-  --lightGrey: #d0d0d0;
-  --turquoise: #4adce4;
-}
-
-body{
+body {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-header{
+header {
   border: solid;
-  border-color: var(--lightGrey);
+  border-color: hsl(0deg, 0%, 82%);
   border-width: 1px;
   width: 65%;
   height: 120px;
@@ -28,73 +22,115 @@ header{
   align-items: center;
   margin: 2rem 0 2rem 0;
 }
-
-h1{
+header h1 {
   padding-left: 2rem;
 }
 
-h2{
+h2 {
   padding: 1.5rem 1rem;
 }
 
-main{
+main {
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-nav{
+nav {
   width: 65%;
   margin-top: 1rem;
   display: flex;
   align-items: center;
 }
-
-nav a{
+nav a {
   margin-right: 1rem;
-  background: rgb(242, 242, 242);
+  background: hsl(0deg, 0%, 95%);
   padding: 1rem 1rem;
   border-left: solid;
   border-top: solid;
   border-right: solid;
-  border-color: var(--lightGrey);
+  border-color: hsl(0deg, 0%, 82%);
   border-width: 1px;
   font-size: 1.5rem;
   cursor: pointer;
 }
-
-nav a:hover{
-  background: var(--lightGrey);
+nav a:hover {
+  background: hsl(0deg, 0%, 82%);
 }
 
-section{
+section {
   border: solid;
-  border-color: var(--lightGrey);
+  border-color: hsl(0deg, 0%, 82%);
   border-width: 1px;
-  border-top: 0.4rem solid var(--turquoise);
+  border-top: 0.4rem solid hsl(183deg, 74%, 59%);
   width: 65%;
 }
 
-#tekst, #ressurser{
+#tekst, #ressurser {
   padding: 0 1rem 1rem 1rem;
 }
 
-#ressurser{
+#ressurser {
   list-style: inside;
 }
-
-#ressurser li{
+#ressurser li {
   padding-bottom: 0.5rem;
 }
-
-#ressurser li a{
-  color: var(--turquoise);
+#ressurser li a {
+  color: hsl(183deg, 74%, 59%);
 }
 
-.active, .active:hover{
-  transition: ease-in-out .2s;
-  background: var(--turquoise);
+.active, .active:hover {
+  transition: ease-in-out 0.2s;
+  background: hsl(183deg, 74%, 59%);
   color: rgb(245, 245, 245);
-  border-color: var(--turquoise);
+  border-color: hsl(183deg, 74%, 59%);
 }
+
+@media only screen and (max-width: 1250px) {
+  nav {
+    width: 95%;
+  }
+  section {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 860px) {
+  nav a {
+    margin-right: 0.3rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 670px) {
+  header {
+    width: 95%;
+    justify-content: center;
+  }
+  header h1 {
+    padding: 0;
+    font-size: 2rem;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
+  nav a {
+    margin-right: 0;
+    flex-basis: 100%;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header {
+    width: 95%;
+    margin: 1rem 0 1rem 0;
+    height: 70px;
+  }
+  header h1 {
+    padding: 0;
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=ressurser.css.map */
