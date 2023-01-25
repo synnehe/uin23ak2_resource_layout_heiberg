@@ -86,30 +86,13 @@
     sanityBtn.addEventListener("click", changeToSanity);
 
     const allElements = document.querySelectorAll("*");
-
- /*
-    htmlBtn.addEventListener("click", changeHTML(htmlBtn, htmlContent));
-    cssBtn.addEventListener("click", changeHTML(cssBtn, cssContent));
-    javascriptBtn.addEventListener("click", changeHTML(javascriptBtn, javascriptContent));
-    reactBtn.addEventListener("click", changeHTML(reactBtn, reactContent));
-    sanityBtn.addEventListener("click", changeHTML(sanityBtn, sanityContent));
-
-    function changeHTML(activate, content){
-    const allElements = document.querySelectorAll("*");
-
-    
-    if (!activate.classList.contains("active")){
-      allElements.forEach(element => {element.classList.remove("active")});
-      activate.classList.add("active");
-      ressurser.innerHTML = "";
-      content()
-    }
-    }*/
-
     
     function changeToHtml(){
     if (!htmlBtn.classList.contains("active")){
       allElements.forEach(element => {element.classList.remove("active")});
+      /* Kilde til hvordan en klasse fjernes fra alle elementer: 
+       * https://codingbeautydev.com/blog/javascript-remove-class-from-all-elements/
+       */
       htmlBtn.classList.add("active");
       ressurser.innerHTML = ""
       htmlContent()
@@ -153,9 +136,6 @@
       sanityContent()
     }
     }
-
-
-
     </script>
 </body>
 </html>
